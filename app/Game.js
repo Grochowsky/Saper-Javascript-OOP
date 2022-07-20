@@ -1,3 +1,6 @@
+import {Cell} from './Cell.js' 
+
+
 class Game {
   #config = {
     easy: {
@@ -21,6 +24,8 @@ class Game {
   #numberOfCols = null;
   #numberOfMines = null;
 
+  #ceclls =[];
+
   initializeGame() {
     this.#newGame();
   }
@@ -33,6 +38,17 @@ class Game {
     this.#numberOfCols = cols;
     this.#numberOfRows = rows;
     this.#numberOfMines = mines;
+
+    this.#generateCells();
+  }
+
+  #generateCells(){
+    for(let row = 0; row < this.#numberOfRows; row++){
+      this.#cells[row] = []
+      for(let col = 0; col<this.#numberOfCols; col++){
+        this.#cells[row].push(new Cell(col,row))
+      }
+    }
   }
 }
 
