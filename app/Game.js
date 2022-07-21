@@ -1,5 +1,4 @@
-import {Cell} from './Cell.js' 
-
+import { Cell } from "./Cell.js";
 
 class Game {
   #config = {
@@ -24,7 +23,7 @@ class Game {
   #numberOfCols = null;
   #numberOfMines = null;
 
-  #ceclls =[];
+  #ceclls = [];
 
   initializeGame() {
     this.#newGame();
@@ -42,11 +41,11 @@ class Game {
     this.#generateCells();
   }
 
-  #generateCells(){
-    for(let row = 0; row < this.#numberOfRows; row++){
-      this.#cells[row] = []
-      for(let col = 0; col<this.#numberOfCols; col++){
-        this.#cells[row].push(new Cell(col,row))
+  #generateCells() {
+    for (let row = 0; row < this.#numberOfRows; row++) {
+      this.#cells[row] = [];
+      for (let col = 0; col < this.#numberOfCols; col++) {
+        this.#cells[row].push(new Cell(col, row));
       }
     }
   }
